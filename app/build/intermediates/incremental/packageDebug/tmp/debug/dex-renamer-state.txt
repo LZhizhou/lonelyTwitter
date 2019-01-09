@@ -1,0 +1,4 @@
+#Tue Jan 08 19:28:16 MST 2019
+base.0=/afs/ualberta.ca/home/z/h/zhizhou/Documents/lonelyTwitter/app/build/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex
