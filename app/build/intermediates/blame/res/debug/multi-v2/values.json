@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/afs/ualberta.ca/home/z/h/zhizhou/Documents/lonelyTwitter/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "D:\\CMPUT301\\lonelyTwitter\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "/afs/ualberta.ca/home/z/h/zhizhou/Documents/lonelyTwitter/app/src/main/res/values/strings.xml",
+                    "source": "D:\\CMPUT301\\lonelyTwitter\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
                         "startLines": "4,6,3,5",
                         "startColumns": "4,4,4,4",
