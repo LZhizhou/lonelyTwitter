@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/afs/ualberta.ca/home/z/h/zhizhou/Documents/lonelyTwitter/app/build/intermediates/res/merged/debug/values_values.arsc.flat",
+            "outputFile": "E:\\Hw\\lonelyTwitter\\app\\build\\intermediates\\res\\merged\\debug\\values_values.arsc.flat",
             "map": [
                 {
-                    "source": "/afs/ualberta.ca/home/z/h/zhizhou/Documents/lonelyTwitter/app/src/main/res/values/strings.xml",
+                    "source": "E:\\Hw\\lonelyTwitter\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
                         "startLines": "4,6,3,5",
                         "startColumns": "4,4,4,4",

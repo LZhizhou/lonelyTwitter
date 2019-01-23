@@ -42,6 +42,8 @@ public class LonelyTwitterActivity extends Activity {
 				setResult(RESULT_OK);
 				String text = bodyText.getText().toString();
 				saveInFile(text, new Date(System.currentTimeMillis()));
+				refresh();
+				bodyText.getText().clear();
 
 			}
 		});
@@ -49,6 +51,7 @@ public class LonelyTwitterActivity extends Activity {
 		clear.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 clearFile(FILENAME);
+                refresh();
             }
         });
 
@@ -58,13 +61,14 @@ public class LonelyTwitterActivity extends Activity {
 	protected void onStart() {
 		// TODO Auto-generated method stub
 		super.onStart();
-		String[] tweets = loadFromFile();
+
+        ArrayList<String> tweets = loadFromFile();
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
 				R.layout.list_item, tweets);
 		oldTweetsList.setAdapter(adapter);
 	}
 
-	private String[] loadFromFile() {
+	private ArrayList<String> loadFromFile() {
 		ArrayList<String> tweets = new ArrayList<String>();
 		try {
 			FileInputStream fis = openFileInput(FILENAME);
@@ -82,7 +86,7 @@ public class LonelyTwitterActivity extends Activity {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return tweets.toArray(new String[tweets.size()]);
+		return tweets;
 	}
 	
 	private void saveInFile(String text, Date date) {
@@ -99,6 +103,8 @@ public class LonelyTwitterActivity extends Activity {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+
 	}
     private void clearFile(String filename) {
 		File dir = getFilesDir();
@@ -117,5 +123,11 @@ public class LonelyTwitterActivity extends Activity {
 			e.printStackTrace();
 		}
 
+    }
+    private void refresh(){
+        ArrayList<String> tweets = loadFromFile();
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                R.layout.list_item, tweets);
+        oldTweetsList.setAdapter(adapter);
     }
 }
