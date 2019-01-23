@@ -1,11 +1,13 @@
 package ca.ualberta.cs.lonelytwitter;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -40,10 +42,16 @@ public class LonelyTwitterActivity extends Activity {
 				setResult(RESULT_OK);
 				String text = bodyText.getText().toString();
 				saveInFile(text, new Date(System.currentTimeMillis()));
-				finish();
 
 			}
 		});
+		Button clear = (Button) findViewById(R.id.clear);
+		clear.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                clearFile(FILENAME);
+            }
+        });
+
 	}
 
 	@Override
@@ -92,4 +100,22 @@ public class LonelyTwitterActivity extends Activity {
 			e.printStackTrace();
 		}
 	}
+    private void clearFile(String filename) {
+		File dir = getFilesDir();
+		File file = new File(dir, filename);
+		boolean deleted = file.delete();
+		try {
+			FileOutputStream fos = openFileOutput(FILENAME,
+					Context.MODE_APPEND);
+			fos.write("".getBytes());
+			fos.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+    }
 }

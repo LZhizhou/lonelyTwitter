@@ -15,9 +15,10 @@ public final class R {
     public static final int body=0x7f020000;
     public static final int clear=0x7f020001;
     public static final int hello=0x7f020002;
-    public static final int oldTweetsList=0x7f020003;
-    public static final int oldTweetsTitle=0x7f020004;
-    public static final int save=0x7f020005;
+    public static final int message=0x7f020003;
+    public static final int oldTweetsList=0x7f020004;
+    public static final int oldTweetsTitle=0x7f020005;
+    public static final int save=0x7f020006;
   }
   public static final class layout {
     public static final int list_item=0x7f030000;
