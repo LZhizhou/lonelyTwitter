@@ -55,24 +55,7 @@ public class LonelyTwitterActivity extends Activity {
         setContentView(R.layout.main);
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("record");
-        myRef.addValueEventListener(new ValueEventListener() {
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot messageSnapshot : dataSnapshot.getChildren()) {
-                    String tweet = (String) messageSnapshot.getValue();
-                    Toast.makeText(LonelyTwitterActivity.this,tweet,Toast.LENGTH_LONG).show();
-                    if (tweet.substring(0,1).equals("U")) {
-                        tweet = tweet.substring(1).toUpperCase();
-                    } else if (tweet.substring(0,1).equals("L")) {
-                        tweet = tweet.substring(1).toLowerCase();
-                    }
-                    myRef.child("tweet").setValue(tweet);
-                }
-            }
 
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.w(TAG, "Failed to read value.");
-            }
-        });
 
 
 
@@ -171,7 +154,22 @@ public class LonelyTwitterActivity extends Activity {
         Tweet tweet = new Tweet(text);
         myRef = database.getReference(tweet.getId());
         myRef.child("tweet").setValue(tweet.getMessage());
-        myRef.child("time").setValue(tweet.getTime());
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String tweet = (String) dataSnapshot.child("tweet").getValue();
+                if (tweet.substring(0,1).equals("U")) {
+                    tweet = tweet.substring(1).toUpperCase();
+                } else if (tweet.substring(0,1).equals("L")) {
+                    tweet = tweet.substring(1).toLowerCase();
+                }
+                myRef.child("tweet").setValue(tweet);
+            }
+
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.w(TAG, "Failed to read value.");
+            }
+        });
 
 
 
