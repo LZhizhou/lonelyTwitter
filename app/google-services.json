@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "648322385451",
+    "firebase_url": "https://cmput301lab-8385f.firebaseio.com",
+    "project_id": "cmput301lab-8385f",
+    "storage_bucket": "cmput301lab-8385f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648322385451:android:988d2e0f27df0599",
+        "android_client_info": {
+          "package_name": "ca.ualberta.cs.lonelytwitter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "648322385451-sc2ki7hmfmst257o3stsesb2ogu69jcc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ca.ualberta.cs.lonelytwitter",
+            "certificate_hash": "e32833d6a8f5ea9cefe107ac12d7a0edf74c28f5"
+          }
+        },
+        {
+          "client_id": "648322385451-vor4un3cltimhkkhvabeq22hi9ocrll7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1f4R1i5jwcoQd7iZnoHs0R6hdU2meWd4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "648322385451-vor4un3cltimhkkhvabeq22hi9ocrll7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

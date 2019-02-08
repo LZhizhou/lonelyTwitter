@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 18
+    compileSdkVersion 27
     buildToolsVersion '28.0.3'
 
     defaultConfig {
         applicationId "ca.ualberta.cs.lonelytwitter"
-        minSdkVersion 18
-        targetSdkVersion 18
+        minSdkVersion 27
+        targetSdkVersion 27
         compileOptions {
             sourceCompatibility JavaVersion.VERSION_1_5
             targetCompatibility JavaVersion.VERSION_1_5
@@ -21,3 +21,10 @@ android {
         }
     }
 }
+dependencies {
+    implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.firebase:firebase-client-android:2.5.2'
+    implementation 'com.google.firebase:firebase-database:16.0.1'
+}
+
+apply plugin: 'com.google.gms.google-services'
