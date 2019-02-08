@@ -1,7 +1,11 @@
 package ca.ualberta.cs.lonelytwitter;
 
 
+import android.icu.text.SimpleDateFormat;
+
+import java.util.Calendar;
 import java.util.Date;
+import java.util.UUID;
 
 /**
  *
@@ -11,8 +15,9 @@ import java.util.Date;
  */
 public class Tweet {
 
-    String message;
-    Date date;
+    private UUID id;
+    private String message;
+    private Calendar time;
 
     Tweet(){
     }
@@ -27,6 +32,9 @@ public class Tweet {
 //Overloading: so that we can specify the tweet cont
     Tweet(String message){
         this.message = message;
+        this.id = UUID.randomUUID();
+        this.time = Calendar.getInstance();
+
     }
 
     /**
@@ -54,4 +62,14 @@ public class Tweet {
     public String toString(){
         return message;
     }
+
+    public String getTime() {
+        SimpleDateFormat dateformat = new SimpleDateFormat("dd-MMM-yyyy hh:mm:ss aa");
+        return dateformat.format(time.getTime());
+    }
+
+    public String getId() {
+        return id.toString();
+    }
+
 }
