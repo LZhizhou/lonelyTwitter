@@ -158,10 +158,10 @@ public class LonelyTwitterActivity extends Activity {
         myRef.addValueEventListener(new ValueEventListener() {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String tweet = (String) dataSnapshot.child("tweet").getValue();
-                if (tweet.substring(0,1).equals("U")) {
-                    tweet = tweet.substring(1).toUpperCase();
-                } else if (tweet.substring(0,1).equals("L")) {
-                    tweet = tweet.substring(1).toLowerCase();
+                if (tweet.substring(0,2).equals("\\U")) {
+                    tweet = tweet.substring(2).toUpperCase();
+                } else if (tweet.substring(0,2).equals("\\L")) {
+                    tweet = tweet.substring(2).toLowerCase();
                 }
                 myRef.child("tweet").setValue(tweet);
             }
